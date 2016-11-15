@@ -9,5 +9,7 @@
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler todo-backend-clojure.handler/app}
   :profiles
-  {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring/ring-mock "0.3.0"]]}})
+  {:dev {:plugins      [[lein-midje "3.2.1"]]
+         :dependencies [[javax.servlet/servlet-api "2.5"]
+                        [ring/ring-mock "0.3.0"]
+                        [midje "1.7.0" :exclusions [org.clojure/clojure]]]}})
