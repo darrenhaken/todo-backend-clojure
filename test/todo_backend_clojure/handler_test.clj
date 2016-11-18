@@ -5,12 +5,12 @@
             [todo-backend-clojure.handler :refer :all]))
 
 (facts "get todos"
- (fact "get main returns Hello World"
-  (let [response (app (mock/request :get "/"))]
-    (:status response) => 200
-    (:body response) => "Hello World")))
+  (fact "get main returns Hello World"
+    (let [response (app (mock/request :get "/"))]
+      (:status response) => 200
+      (:body response) => "Hello World")))
 
 (facts "not found route"
-    (fact "should not show route"
-      (let [response (app (mock/request :get "/invalid"))]
+  (fact "should not show route"
+    (let [response (app (mock/request :get "/invalid"))]
       (:status response) => 404)))
