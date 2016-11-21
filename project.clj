@@ -5,14 +5,15 @@
   :aot :all
   :java-target "1.8"
   :uberjar-name "todo-backend-clojure-standalone.jar"
+  :resource-paths ["resources"]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/data.json "0.2.6"]
+                 [org.clojure/java.jdbc "0.6.1"]
                  [compojure "1.5.1"]
                  [ring/ring-defaults "0.2.1"]
-                 [jumblerg/ring.middleware.cors "1.0.1"]]
-                 ;[hiccup "1.0.5"]
-                 ;[org.clojure/java.jdbc "0.7.0-alpha1"]
-                 ;[com.h2database/h2 "1.3.170"]]
+                 [jumblerg/ring.middleware.cors "1.0.1"]
+                 [hiccup "1.0.5"]
+                 [com.h2database/h2 "1.3.170"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler todo-backend-clojure.handler/app}
   :profiles

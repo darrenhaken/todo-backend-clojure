@@ -3,7 +3,7 @@
             [compojure.route :as route]
     ;[clojure.data.json :as json]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]])
-  (:use [todo-backend-clojure.middleware :only [all-cors]]))
+  (:use [todo-backend-clojure.middleware :only [wrap-cors]]))
 
 ;(defn parse [body]
 ;  (json/read-str (slurp body) :key-fn keyword))
@@ -20,23 +20,18 @@
   {:status 200 :body body})
 
 (defroutes app-routes
-  (GET "/" []
-    (res->ok "Hello World"))
-  (OPTIONS "/" []
+  (OPTIONS "/todo" []
     {:status 200})
-  (OPTIONS "/todos" []
-    {:status 200})
-  ;(OPTIONS "/todos/:id" [id]
-  ;  {:status 200)
   (GET "/todo" []
     (res->ok "Hello World"))
   (POST "/todo" []
-    res->created {:body "body"})
-  (GET "/todo" []
+    (res->created {:body "body"}))
+  (DELETE "/todo" []
     (res->ok "Hello World"))
   (route/not-found
     (res->no-content)))
 
 (def app
-  (-> (wrap-defaults app-routes api-defaults)
-      all-cors))
+  (->
+    (wrap-defaults app-routes api-defaults)
+    wrap-cors))

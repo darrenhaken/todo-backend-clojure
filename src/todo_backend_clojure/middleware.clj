@@ -11,7 +11,7 @@
   [request]
   (= (request :request-method) :options))
 
-(defn all-cors
+(defn wrap-cors
   "Allow requests from all origins - also check preflight"
   [handler]
   (fn [request]

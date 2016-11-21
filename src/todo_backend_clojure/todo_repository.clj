@@ -1,8 +1,5 @@
-(ns todo-backend-clojure.todo-repository
-  (:require [clojure.java.jdbc :as sql]))
+(ns todo-backend-clojure.todo-repository)
 
-(defn add-todo [todo])
+(def todo-db (atom {}))
 
-(defn delete-todo [id])
-
-(defn get-all [])
+(defn add [table doc] (swap! todo-db update-in [table] conj doc))
