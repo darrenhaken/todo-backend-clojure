@@ -1,5 +1,19 @@
-(ns todo-backend-clojure.todo-repository)
+(ns todo-backend-clojure.todo-repository
+  (:require [clojure.java.jdbc :as sql]))
 
-(def todo-db (atom {}))
+(def db-spec {:classname   "org.h2.Driver"
+              :subprotocol "h2:file"
+              :subname     "resources/db/todo;DB_CLOSE_DELAY=-1"})
 
-(defn add [table doc] (swap! todo-db update-in [table] conj doc))
+(defn create-todo! [todo]
+  (->
+    (sql/insert! db-spec :todo todo)
+    first
+    vals
+    first))
+
+(defn get-by-id [id]
+  (sql/query db-spec ["SELECT * FROM todo WHERE id = ?" id]))
+
+(defn delete! [id]
+  (sql/delete! db-spec :todo ["id = ?" id]))
