@@ -5,9 +5,9 @@
               :subprotocol "h2:file"
               :subname     "resources/db/todo;DB_CLOSE_DELAY=-1"})
 
-(defn- extract-id-from-result [result-sec]
+(defn- sql-result->id [result-seq]
   (->
-    result-sec
+    result-seq
     first
     vals
     first))
@@ -15,9 +15,12 @@
 (defn create-todo!
   "Creates a todo and returns the ID"
   [todo]
-  (comp (sql/insert! db-spec :todo todo) extract-id-from-result))
+  (->
+    (sql/insert! db-spec :todo todo)
+    sql-result->id))
 
-(defn get-all [])
+(defn get-all []
+  (sql/query db-spec ["SELECT * FROM todo"]))
 
 (defn get-by-id
   "Get todo by ID. Returns a list of todos"
@@ -29,4 +32,5 @@
   [id]
   (sql/delete! db-spec :todo ["id = ?" id]))
 
-(defn delete-all!)
+(defn delete-all! []
+  (sql/delete! db-spec :todo [true]))

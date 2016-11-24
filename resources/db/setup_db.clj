@@ -7,10 +7,11 @@
               :username    "sa"
               :password    ""})
 
-(sql/db-do-commands db-spec
-  (sql/create-table-ddl :todo
-    [[:id "bigint" :primary :key "auto_increment"]
-     [:name "varchar(32)"]]))
+(defn create-todo-table []
+  (sql/db-do-commands db-spec
+    (sql/create-table-ddl :todo
+      [[:id "bigint" :primary :key "auto_increment"]
+       [:title "varchar(32)"]])))
 
 (defn drop-todo-table []
   (sql/drop-table-ddl :todo))
