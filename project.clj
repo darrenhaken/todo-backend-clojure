@@ -11,6 +11,7 @@
                  [org.clojure/java.jdbc "0.6.1"]
                  [compojure "1.5.1"]
                  [ring/ring-defaults "0.2.1"]
+                 [ring/ring-json "0.4.0"]
                  [jumblerg/ring.middleware.cors "1.0.1"]
                  [com.h2database/h2 "1.3.170"]]
   :plugins [[lein-ring "0.9.7"]]

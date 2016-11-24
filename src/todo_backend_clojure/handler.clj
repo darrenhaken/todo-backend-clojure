@@ -1,12 +1,10 @@
 (ns todo-backend-clojure.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
-    ;[clojure.data.json :as json]
-            [ring.middleware.defaults :refer [wrap-defaults api-defaults]])
-  (:use [todo-backend-clojure.middleware :only [wrap-cors]]))
-
-;(defn parse [body]
-;  (json/read-str (slurp body) :key-fn keyword))
+            [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
+            [ring.middleware.json :as middleware])
+  (:use [todo-backend-clojure.middleware :only [wrap-cors]]
+        [todo-backend-clojure.todo-repository :as store]))
 
 (defn- res->created [result]
   {:status  201
@@ -20,18 +18,38 @@
   {:status 200 :body body})
 
 (defroutes app-routes
-  (OPTIONS "/todo" []
+  (OPTIONS "/todos" []
     {:status 200})
-  (GET "/todo" []
-    (res->ok "Hello World"))
-  (POST "/todo" []
-    (res->created {:body "body"}))
-  (DELETE "/todo" []
-    (res->ok "Hello World"))
+  (GET "/todos" []
+    (->
+      (store/get-all)
+      (res->ok)))
+  (GET "/todos/:id" [id]
+    (->
+      (store/get-by-id id)))
+  (POST "/todos" [todo]
+    (->
+      (store/create-todo! todo)
+      (res->created)))
+  ;(PATCH "/todos/:id" [id body]}
+  ;  (-> body
+  ;      parse
+  ;      (#(store/patch-todo id %))
+  ;      todo-representation
+  ;      res->ok))
+  (DELETE "/todos" []
+    (store/delete-all!)
+    (res->no-content))
+  (DELETE "/todos/:id" [id]
+    (store/delete! id)
+    (res->no-content))
   (route/not-found
     (res->no-content)))
 
 (def app
   (->
-    (wrap-defaults app-routes api-defaults)
-    wrap-cors))
+    app-routes
+    (wrap-cors)
+    (middleware/wrap-json-response)
+    (middleware/wrap-json-body)
+    (wrap-defaults api-defaults)))
