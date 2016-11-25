@@ -12,6 +12,12 @@
     vals
     first))
 
+(defn- as-todo [row]
+  (dissoc (assoc row :order (:sequence row)) :sequence))
+
+(defn- as-row [todo]
+  (dissoc (assoc todo :sequence (:order todo)) :order))
+
 (defn create-todo!
   "Creates a todo and returns the ID"
   [todo]
@@ -26,6 +32,10 @@
   "Get todo by ID. Returns a list of todos"
   [id]
   (sql/query db-spec ["SELECT * FROM todo WHERE id = ?" id]))
+
+(defn update-todo! [id todo]
+  (sql/update! db-spec :todo todo ["id = ?" id])
+  (get-by-id id))
 
 (defn delete!
   "Delete the todo. Returns a list containing the ID of the deleted record"
