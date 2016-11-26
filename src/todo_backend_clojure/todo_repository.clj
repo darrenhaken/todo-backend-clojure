@@ -29,9 +29,9 @@
   (sql/query db-spec ["SELECT * FROM todo"]))
 
 (defn get-by-id
-  "Get todo by ID. Returns a list of todos"
+  "Get todo by ID. Returns first todo in the vector"
   [id]
-  (sql/query db-spec ["SELECT * FROM todo WHERE id = ?" id]))
+  (first (sql/query db-spec ["SELECT * FROM todo WHERE id = ?" id])))
 
 (defn update-todo! [id todo]
   (sql/update! db-spec :todo todo ["id = ?" id])
