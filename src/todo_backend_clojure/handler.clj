@@ -9,21 +9,22 @@
 (defn- todo-url [todo-id]
   (str "/todos/" todo-id))
 
-(defn- res->created [id]
+(defn- todo-representation
+  "Creates a todo to send to client that also contains the URL for the todo"
+  [id todo]
+  (let [todo-url (todo-url id)]
+    (assoc todo :id id :url todo-url)))
+
+(defn- res->created [id, todo]
   {:status  201
    :headers {"Location" (todo-url id)}
-   :body    (todo-url id)})
+   :body    (todo-representation id todo)})
 
 (defn- res->no-content []
   {:status 204})
 
 (defn- res->ok [body]
   {:status 200 :body body})
-
-(defn todo-representation
-  "Creates a todo to send to client that also contains the URL for the todo"
-  [todo]
-  (assoc todo :url (todo-url (:id todo))))
 
 (defroutes app-routes
   (OPTIONS "/todos" []
@@ -37,13 +38,12 @@
       (store/get-by-id id)
       (res->ok)))
   (POST "/todos" {todo :body}
-    (->
-      (store/create-todo! todo)
-      (res->created)))
+    (let [todo-id (store/create-todo! todo)]
+      (res->created todo-id todo)))
   (PATCH "/todos/:id" {{id :id} :params todo :body}
     (-> todo
         (#(store/update-todo! id %))
-        (todo-representation)
+        (#(todo-representation id %))
         (res->ok)))
   (DELETE "/todos" []
     (store/delete-all!)

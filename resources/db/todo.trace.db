@@ -282,3 +282,138 @@ INSERT INTO todo ( name ) VALUES ( ? ) [42122-170]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
 	at java.lang.Thread.run(Thread.java:745)
+11-25 18:18:00 jdbc[30]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:00 jdbc[30]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:00 jdbc[30]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[31]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[31]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[31]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 18:18:01 jdbc[32]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:06 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:06 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:06 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[27]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[27]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[27]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[28]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[28]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:28:07 jdbc[28]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[56]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[56]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:15 jdbc[56]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:48 jdbc[81]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:48 jdbc[81]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:48 jdbc[81]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[82]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[82]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[82]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-25 19:35:49 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( TITLE, ORDER[*] ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( title, order ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
+11-26 12:30:28 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TODO ( ORDER[*], TITLE ) VALUES ( ?, ? ) "; expected "identifier"; SQL statement:
+INSERT INTO todo ( order, title ) VALUES ( ?, ? ) [42001-170]
