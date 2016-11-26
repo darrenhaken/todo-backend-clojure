@@ -12,18 +12,13 @@
     vals
     first))
 
-(defn- as-todo [row]
-  (dissoc (assoc row :order (:sequence row)) :sequence))
-
-(defn- as-row [todo]
-  (dissoc (assoc todo :sequence (:order todo)) :order))
-
 (defn create-todo!
   "Creates a todo and returns the ID"
   [todo]
-  (->
-    (sql/insert! db-spec :todo todo)
-    sql-result->id))
+  (let [incomplete-todo (merge todo {:completed false})]
+    (let [id (sql-result->id
+               (sql/insert! db-spec :todo incomplete-todo))]
+      (merge incomplete-todo {:id id}))))
 
 (defn get-all []
   (sql/query db-spec ["SELECT * FROM todo"]))

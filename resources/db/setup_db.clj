@@ -11,7 +11,8 @@
   (sql/db-do-commands db-spec
     (sql/create-table-ddl :todo
       [[:id "bigint" :primary :key "auto_increment"]
-       [:title "varchar(32)"]])))
+       [:title "varchar(32)"]
+       [:completed "boolean"]])))
 
 (defn drop-todo-table []
   (sql/drop-table-ddl :todo))
