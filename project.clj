@@ -4,6 +4,7 @@
   :min-lein-version "2.0.0"
   :aot :all
   :java-target "1.8"
+  :main ^:skip-aot todo-backend-clojure.handler
   :uberjar-name "todo-backend-standalone.jar"
   :resource-paths ["resources"]
   :dependencies [[org.clojure/clojure "1.8.0"]
@@ -11,6 +12,7 @@
                  [org.clojure/java.jdbc "0.6.1"]
                  [compojure "1.5.1"]
                  [ring/ring-defaults "0.2.1"]
+                 [ring/ring-jetty-adapter "1.5.0"]
                  [ring/ring-json "0.4.0"]
                  [jumblerg/ring.middleware.cors "1.0.1"]
                  [com.h2database/h2 "1.3.170"]]
