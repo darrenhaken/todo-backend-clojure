@@ -2,10 +2,10 @@
   (:require
     [compojure.core :refer :all]
     [compojure.route :as route]
-    [ring.middleware.json :as middleware]
+    [ring.middleware.json :as json-middleware]
     [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
     [todo-backend-clojure.todo_routes :as routes]
-    [todo-backend-clojure.middleware :as cors]))
+    [todo-backend-clojure.middleware :as todo-middleware]))
 
 (defroutes app-routes
   routes/todo-routes)
@@ -13,7 +13,9 @@
 (def app
   (->
     app-routes
-    (cors/wrap-cors)
-    (middleware/wrap-json-response)
-    (middleware/wrap-json-body)
+    (todo-middleware/wrap-cors)
+    (todo-middleware/wrap-response-expand-url-body)
+    (todo-middleware/wrap-response-expand-location)
+    (json-middleware/wrap-json-response)
+    (json-middleware/wrap-json-body)
     (wrap-defaults api-defaults)))
